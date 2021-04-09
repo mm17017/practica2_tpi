@@ -35,7 +35,7 @@ public class ClientVideoClubServiceTest extends TestCase {
     public void testGetVideo() throws Exception {
         EasyMock.expect(remoteVideoClubServiceMock.getVideo(28)).andReturn(Video28Mock);
         EasyMock.replay(remoteVideoClubServiceMock);
-        IVideoClubService clientVideoClubService = new clientVideoClubService(remoteVideoClubServiceMock);
+        IVideoClubService clientVideoClubService = new ClientVideoClubService(remoteVideoClubServiceMock);
         IVideo result = clientVideoClubService.getVideo(28);
         assertEquals(Video28Mock, result);
         EasyMock.verify(remoteVideoClubServiceMock);
